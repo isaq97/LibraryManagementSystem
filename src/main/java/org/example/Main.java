@@ -82,7 +82,8 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(libraryService.getBookWithMaxPages());
+        System.out.println(libraryService.getBookWithMaxPages().map(Book::getPages)
+                .orElse(0));
         System.out.println(libraryService.returnItem(2,LocalDate.now().plusDays(16)));
 
 
